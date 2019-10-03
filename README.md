@@ -1,6 +1,5 @@
-# BOJ Problem Solving Archive
+# 📚BOJ Problem Solving Archive
 
-## ID : cjstjdgur123
-
-### using C++, Python
+- ID: cjstjdgur123
+- Language: C++ for Speed, Python for Logic
 

@@ -21,6 +21,8 @@
 - KMP
 
 ## Contest History
+- KOI 2011, 경남 금상 -> 전국 진출 장려
+
 - 2016 Hongik Univ. Programming Contest 2rd
  (https://www.acmicpc.net/contest/view/198)
  

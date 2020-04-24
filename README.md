@@ -23,10 +23,10 @@
 ## Contest History
 - KOI 2011, 경남 금상 -> 전국 진출 장려
 
-- 2016 Hongik Univ. Programming Contest 2rd
+- 2016 Hongik Univ. Programming Contest 2nd
  (https://www.acmicpc.net/contest/view/198)
  
-- 2019 Hongik Univ. Programming Contest 2rd
+- 2019 Hongik Univ. Programming Contest 2nd
  (https://www.acmicpc.net/contest/view/479)
 
 ## Personal Page

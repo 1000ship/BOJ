@@ -1,0 +1,33 @@
+m, n = map( int, input().split() )
+origin = list(map(int, input().split()))
+origin.sort(key=int, reverse=True)
+
+left = 0
+right = origin[ 0 ]
+
+def isPossible ( size ):
+    arr = origin + []
+    idx = 0
+    eat = 0
+    while idx < len(arr) and eat < m :
+        if arr[idx] >= size :
+            eat += int( arr[idx] / size )
+            arr[idx] %= size
+        idx += 1
+
+    if eat >= m :
+        return True
+    return False
+
+
+while right - left > 1 :
+    mid = int((left + right) / 2)
+    if isPossible( mid ) :
+        left = mid
+    else :
+        right = mid
+
+if isPossible( right ):
+    print( right )
+else :
+    print( left )

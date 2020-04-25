@@ -1,0 +1,8 @@
+n = int(input())
+lst = []
+for i in range(n):
+    lst.append(tuple(map(int,input().split())))
+lst.sort(key=lambda element: element[0])
+lst.sort(key=lambda element: element[1])
+for t in lst:
+    print(t[0], t[1])

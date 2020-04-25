@@ -1,4 +1,3 @@
-
 let str = readLine()!
 var sum = 0
 let arr = str.split(separator: " ")

@@ -42,4 +42,8 @@ def calc(current):
 			calc(index)
 
 calc(0)
+<<<<<<< HEAD
 print( dp[len(str)] )
+=======
+print( dp[len(str)] )
+>>>>>>> Add crawled files

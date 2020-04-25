@@ -11,4 +11,8 @@ arr2 = sorted(arr, key=lambda x: x.number)
 for index, item in enumerate(arr2):
 	item.order = index
 arr = map(str, arr)
+<<<<<<< HEAD
 print(" ".join(arr))
+=======
+print(" ".join(arr))
+>>>>>>> Add crawled files

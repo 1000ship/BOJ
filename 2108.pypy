@@ -1,0 +1,32 @@
+import math
+n = int(input())
+sum = 0
+max = -4001
+min = 4001
+dic={}
+all=[]
+for i in range(n):
+    val = int(input())
+    all.append(val)
+    if min > val:
+        min = val
+    if max < val:
+        max = val
+    sum += val
+    if val not in dic:
+        dic[val] = 1
+    else:
+        dic[val] += 1
+print("{:.0f}".format(sum/n))
+lst = [(i,dic[i]) for i in dic]
+lst.sort(key=lambda element: element[0])
+all.sort()
+print(all[int(n/2)])
+lst.sort(key=lambda element: element[1], reverse=True)
+if n == 1:
+    print(lst[0][0])
+elif lst[0][1] == lst[1][1]:
+    print(lst[1][0])
+else:
+    print(lst[0][0])
+print(max-min)

@@ -10,4 +10,4 @@ def recursion( arr ):
     else:
         print( " ".join(map(lambda x: str(sub[x-1]), arr)) )
 
-recursion( [] )
+recursion([])

@@ -1,9 +1,12 @@
-# 14438(2) used
+# 2268.py used
+# 14438(2).py used
+
 class Segment ():
     def __init__(self, value):
         self.value = value
         self.left = self.right = self.parent = None
         self.begin = self.end = None
+        self.children = None # only root has children
     def setBeginEnd(self, begin, end):
         self.begin = begin
         self.end = end
@@ -26,6 +29,8 @@ class Segment ():
         else:
             return f"{self.left}{self.right}"
     def getNodeByIndex(self, index):
+        if self.children:
+            return self.children[index]
         if self.begin == self.end == index:
             return self
         if self.left.begin <= index <= self.left.end:
@@ -63,6 +68,12 @@ class Segment ():
                 self.left.execute(begin, end, func)
             if self.right:
                 self.right.execute(begin, end, func)
+    def executePropagation(self, begin, end, func):
+        func(self)
+        if not(self.left.end < begin or self.left.begin < end):
+            self.left.execute(begin, end, func)
+        if not(self.right.end < begin or self.right.begin < end):
+            self.right.execute(begin, end, func)
     def executeUp(self, func):
         func(self)
         if self.parent:
@@ -78,15 +89,18 @@ class Segment ():
     def makeTree(arr, defaultValue = None):
         root = Segment(defaultValue)
         stack = [(0, len(arr)-1, root)]
+        children = []
         while stack:
             begin, end, pointer = stack.pop()
             pointer.setBeginEnd( begin, end )
             if begin == end:
                 pointer.setValue(arr[begin])
+                children.append(pointer)
             else:
                 mid = (begin+end) // 2
                 stack.append( (mid+1, end, pointer.setRight(Segment(defaultValue))) )
                 stack.append( (begin, mid, pointer.setLeft(Segment(defaultValue))) )
+        root.children = children
         return root
 
 if __name__ == "__main__":

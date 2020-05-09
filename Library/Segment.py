@@ -1,5 +1,4 @@
 # 14438(2) used
-
 class Segment ():
     def __init__(self, value):
         self.value = value
@@ -41,6 +40,21 @@ class Segment ():
             trees += self.left.getTreesInRange(begin, end)
             trees += self.right.getTreesInRange(begin, end)
         return trees
+    def getHeapList(self):
+        heap = []
+        stackA = [self]
+        stackB = []
+        while stackA or stackB:
+            if not stackB:
+                while stackA:
+                    stackB.append(stackA.pop())
+            node = stackB.pop()
+            heap.append(node)
+            if node.left:
+                stackA.append(node.left)
+            if node.right:
+                stackA.append(node.right)
+        return heap
     def executeDown(self, begin, end, func):
         if begin <= self.begin and self.end <= end:
             func(self)
@@ -74,3 +88,13 @@ class Segment ():
                 stack.append( (mid+1, end, pointer.setRight(Segment(defaultValue))) )
                 stack.append( (begin, mid, pointer.setLeft(Segment(defaultValue))) )
         return root
+
+if __name__ == "__main__":
+    import math
+    root = Segment.makeTree([4, 5, 2, 1, 3, 0], defaultValue=math.inf)
+    heap = reversed(root.getHeapList())
+    for node in heap:
+        if node.left and node.right:
+            node.value = min(node.left.value, node.right.value)
+    print( root.value )
+    print( root )

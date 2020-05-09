@@ -1,4 +1,4 @@
-class BinarySearchTree():
+class BinarySearch():
     def __init__(self, value):
         self.value = value
         self.left = self.right = self.parent = None
@@ -35,8 +35,8 @@ class BinarySearchTree():
     def makeTree(arr, autoSort = False):
         if autoSort:
             arr.sort()
-        root = BinarySearchTree( arr[(len(arr)-1)//2] )
-        stack = [((len(arr)-1)//2 + 1, len(arr)-1, root.setRight(BinarySearchTree(None))), (0, (len(arr)-1)//2 - 1, root.setLeft(BinarySearchTree(None)))]
+        root = BinarySearch( arr[(len(arr)-1)//2] )
+        stack = [((len(arr)-1)//2 + 1, len(arr)-1, root.setRight(BinarySearch(None))), (0, (len(arr)-1)//2 - 1, root.setLeft(BinarySearch(None)))]
         while stack:
             begin, end, pointer = stack.pop()
             if begin > end:
@@ -44,8 +44,8 @@ class BinarySearchTree():
             else:
                 mid = (begin+end) // 2
                 pointer.value = arr[mid]
-                stack.append( (mid+1, end, pointer.setRight(BinarySearchTree(None))) )
-                stack.append( (begin, mid-1, pointer.setLeft(BinarySearchTree(None))) )
+                stack.append( (mid+1, end, pointer.setRight(BinarySearch(None))) )
+                stack.append( (begin, mid-1, pointer.setLeft(BinarySearch(None))) )
         return root
     def __str__(self):
         return f"{self.left if self.left else ''}{self.value} {self.right if self.right else ''}"

@@ -28,6 +28,8 @@ class Segment ():
             return f"{self.value} "
         else:
             return f"{self.left}{self.right}"
+    def __repr__(self):
+        return f"{self.value}"
     def getNodeByIndex(self, index):
         if self.children:
             return self.children[index]
@@ -38,11 +40,12 @@ class Segment ():
         elif self.right.begin <= index <= self.right.end:
             return self.right.getNodeByIndex(index)
     def getTreesInRange(self, begin, end):
-        trees = []
         if begin <= self.begin and self.end <= end:
-            trees += [self]
-        elif not(self.end < begin or end < self.begin):
+            return [self]
+        trees = []
+        if not(self.left.end < begin or end < self.left.begin):
             trees += self.left.getTreesInRange(begin, end)
+        if not(self.right.end < begin or end < self.right.begin):
             trees += self.right.getTreesInRange(begin, end)
         return trees
     def getHeapList(self):
@@ -111,4 +114,4 @@ if __name__ == "__main__":
         if node.left and node.right:
             node.value = min(node.left.value, node.right.value)
     print( root.value )
-    print( root )
+    print( root.children )

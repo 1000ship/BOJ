@@ -114,4 +114,5 @@ if __name__ == "__main__":
         if node.left and node.right:
             node.value = min(node.left.value, node.right.value)
     print( root.value )
+    print( min([node.value for node in root.getTreesInRange(1, 4)]) )
     print( root.children )

@@ -26,7 +26,7 @@
 - 2016 Hongik Univ. Programming Contest 2nd using JAVA/C
  (https://www.acmicpc.net/contest/view/198)
  
-- 2019 Hongik Univ. Programming Contest 2nd using Python/C++
+- 2019 Hongik Univ. Programming Contest 2nd using Python/C
  (https://www.acmicpc.net/contest/view/479)
 
 ## Personal Page

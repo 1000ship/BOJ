@@ -21,12 +21,12 @@
 - KMP
 
 ## Contest History
-- KOI 2011, 경남 금상 -> 전국 진출 장려
+- KOI 2011, 경남 금상 -> 전국 진출 장려 using C
 
-- 2016 Hongik Univ. Programming Contest 2nd
+- 2016 Hongik Univ. Programming Contest 2nd using JAVA/C
  (https://www.acmicpc.net/contest/view/198)
  
-- 2019 Hongik Univ. Programming Contest 2nd
+- 2019 Hongik Univ. Programming Contest 2nd using Python/C
  (https://www.acmicpc.net/contest/view/479)
 
 ## Personal Page

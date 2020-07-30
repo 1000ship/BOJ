@@ -22,6 +22,5 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "vector": "cpp"
-    },
-    "python.pythonPath": "/usr/bin/python3"
+    }
 }

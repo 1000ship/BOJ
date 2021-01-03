@@ -1,0 +1,1 @@
+gets;puts gets.split.map {|str| str[0]}.uniq.length==1?1:0

@@ -4,7 +4,7 @@
 - Language
 
 	1. **C / C++** for *Speed*
-	2. **Python / Java** for *Logic*
+	2. **Ruby / Python / Java** for *Logic*
 	3. **Swift** for *Learning Swift Syntax*
 	
 ## Things that I solved at least one time
